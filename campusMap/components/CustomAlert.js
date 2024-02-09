@@ -12,7 +12,7 @@ const CustomAlert = ({ visible, onClose }) => {
     >
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          <Text style={styles.modalTitle}>Error</Text>
+          <Text style={styles.modalTitle}>Erreur</Text>
           <Text style={styles.modalDescription}>Veuillez verifier votre Adresse e-mail ou votre mot de passe </Text>
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <Text style={styles.closeButtonText}>Fermer</Text>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalView: {
-    backgroundColor: 'white',
+    backgroundColor: '#F8EFE0',
     borderRadius: 12,
     padding: 25,
     alignItems: 'center',
@@ -39,22 +39,23 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#333333', 
+    color: "#003CA6", 
     marginBottom: 10,
   },
   modalDescription: {
     fontSize: 16,
     marginBottom: 20,
     textAlign: 'center',
-    color: '#666666', // Couleur de la description
+    color: "#1D1D1D", 
   },
   closeButton: {
-    backgroundColor: '#007bff', // to change 
-    padding: 10,
-    borderRadius: 8,
+    backgroundColor: "#003CA6",
+    padding: 12,
+    borderRadius: 15,
   },
   closeButtonText: {
-    color: 'white',
+    color: '#FFFFFF',
+    fontWeight: "bold",
     fontSize: 16,
   },
 });

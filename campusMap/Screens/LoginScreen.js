@@ -39,7 +39,7 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
      return (
     <View style={styles.container}>
        {/* title */}
-      <Text title center >Connexion</Text>
+      <Text title center style={styles.title}>Connexion</Text>
       <View style={{marginHorizontal : 24}}>
      {/* e-mail input */}
       <TextInput
@@ -73,28 +73,26 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#F8EFE0",
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  // headerText: {
-  //   fontSize: 24,
-  //   marginBottom: 20,
-  // },
+   title: {
+     color : "#003CA6" ,
+  },
   input: {
-    width: '80%',
-    height: 48,
-    //borderColor: 'gray',
-    // borderWidth: 1,
-    borderBottomWidth: 0.5, 
+    width: '90%',
+    height: 50,
+    borderBottomWidth: 1.1, 
     borderBottomColor:'#8e93a1',
-    marginBottom: 22,
-    padding: 10,
+    marginBottom: 20,
+    padding: 20,
   },
   loginButton: {
-    backgroundColor: '#007bff',
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: '#003CA6',
+    padding: 12,
+    borderRadius: 15,
   },
   loginButtonText: {
     color: 'white',
