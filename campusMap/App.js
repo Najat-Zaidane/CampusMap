@@ -7,7 +7,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from './Screens/LoginScreen.js';
 import HomeScreen from  './Screens/HomeScreen.js';
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,12 +28,15 @@ const Stack=createStackNavigator();
 
 export default function App() {
     return(
+   
     <NavigationContainer>
      <Stack.Navigator screenOptions={{headerShown: false}}>
        <Stack.Screen name='Login' component={LoginScreen}/>
        <Stack.Screen name='Home' component={HomeScreen}/>
      </Stack.Navigator>
     </NavigationContainer>
+  
+    
  );
 }
 

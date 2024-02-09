@@ -3,6 +3,7 @@ import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import  Text  from '@kaloraat/react-native-text';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
+
 const LoginScreen = ({ navigation }) => {
 
   const [email, setEmail] = useState("");
@@ -22,13 +23,13 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
     const user = userCredential.user; // userCredential est la reponse ( info)  de l'utilisateur connecté
     //comment enregister les infos dans le memoire de l'appli 
            })
-           
+
   //error case 
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    //Display a message error  on the view
-     alert(`Error ${errorCode} : ${errorMessage}`);
+    //Display a styled message error  on the view
+    alert("Veuillez ressayer"); // to change
   });
   };
 
