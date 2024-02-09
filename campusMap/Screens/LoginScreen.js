@@ -8,10 +8,7 @@ const LoginScreen = ({ navigation }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
   const [errorVisible, setErrorVisible] = useState(false); // Pour contrôler la visibilité de l'alerte
-  const [errorCode, setErrorCode] = useState(""); // Pour stocker le code d'erreur
-  const [errorMessage, setErrorMessage] = useState(""); // Pour stocker le message d'erreur
 
 
  
@@ -34,10 +31,8 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    //Display a styled message error  on the view
+    //Display a styled message error  on the view 
     setErrorVisible(true);
-    setErrorCode(errorCode);
-    setErrorMessage(errorMessage)
   });
   };
 
@@ -67,8 +62,8 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
       </TouchableOpacity>
 
       {/* Affichez CustomAlert si errorVisible est vrai */}
-      <CustomAlert visible={errorVisible} errorCode={errorCode} errorMessage={errorMessage} onClose={() => setErrorVisible(false)} />
-      
+      <CustomAlert visible={errorVisible} onClose={() => setErrorVisible(false)} />
+
       </View>
     </View>
 

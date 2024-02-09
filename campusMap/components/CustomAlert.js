@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal } from 'react-native';
 
-const CustomAlert = ({ visible, errorCode, errorMessage, onClose }) => {
+const CustomAlert = ({ visible, onClose }) => {
   return (
    // Modale est pour afficher le contenu d'une maniére modale , c'est à dire par dessus le contenu principal  de l'application.
     <Modal
@@ -12,8 +12,8 @@ const CustomAlert = ({ visible, errorCode, errorMessage, onClose }) => {
     >
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          <Text style={styles.modalTitle}>Error {errorCode}</Text>
-          <Text style={styles.modalDescription}>{errorMessage}</Text>
+          <Text style={styles.modalTitle}>Error</Text>
+          <Text style={styles.modalDescription}>Veuillez verifier votre Adresse e-mail ou votre mot de passe </Text>
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <Text style={styles.closeButtonText}>Fermer</Text>
           </TouchableOpacity>
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
   },
   modalView: {
     backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 20,
+    borderRadius: 12,
+    padding: 25,
     alignItems: 'center',
   },
   modalTitle: {
