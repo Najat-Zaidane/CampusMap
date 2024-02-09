@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import  Text  from '@kaloraat/react-native-text';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginScreen = ({ navigation }) => {
@@ -31,13 +32,17 @@ signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>Connexion</Text>
+       {/* title */}
+      <Text title center >Connexion</Text>
+      <View style={{marginHorizontal : 24}}>
+     {/* e-mail input */}
       <TextInput
         style={styles.input}
         placeholder="Adresse e-mail"
         onChangeText={setEmail}
         value={email}
       />
+      {/* pwd input */}
       <TextInput
         style={styles.input}
         placeholder="Mot de passe"
@@ -45,9 +50,11 @@ signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
         onChangeText={setPassword}
         value={password}
       />
+      {/*  submit button */}
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.loginButtonText}>Se connecter</Text>
       </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -58,16 +65,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  headerText: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
+  // headerText: {
+  //   fontSize: 24,
+  //   marginBottom: 20,
+  // },
   input: {
     width: '80%',
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginBottom: 20,
+    height: 48,
+    //borderColor: 'gray',
+    // borderWidth: 1,
+    borderBottomWidth: 0.5, 
+    borderBottomColor:'#8e93a1',
+    marginBottom: 22,
     padding: 10,
   },
   loginButton: {
