@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import  Text  from '@kaloraat/react-native-text';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
+import CustomAlert from '../components/CustomAlert';
 
 const LoginScreen = ({ navigation }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
+  const [errorVisible, setErrorVisible] = useState(false); // Pour contrôler la visibilité de l'alerte
+  const [errorCode, setErrorCode] = useState(""); // Pour stocker le code d'erreur
+  const [errorMessage, setErrorMessage] = useState(""); // Pour stocker le message d'erreur
+
+
  
   //if  user is already logged in then navigate to home screen directly
   // if (getAuth().currentUser) {
@@ -29,7 +35,9 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     //Display a styled message error  on the view
-    alert("Veuillez ressayer"); // to change
+    setErrorVisible(true);
+    setErrorCode(errorCode);
+    setErrorMessage(errorMessage)
   });
   };
 
@@ -57,6 +65,10 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.loginButtonText}>Se connecter</Text>
       </TouchableOpacity>
+
+      {/* Affichez CustomAlert si errorVisible est vrai */}
+      <CustomAlert visible={errorVisible} errorCode={errorCode} errorMessage={errorMessage} onClose={() => setErrorVisible(false)} />
+      
       </View>
     </View>
 
