@@ -4,8 +4,9 @@ import  Text  from '@kaloraat/react-native-text';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
  
   //if  user is already logged in then navigate to home screen directly
   // if (getAuth().currentUser) {
@@ -13,24 +14,25 @@ const LoginScreen = ({ navigation }) => {
   //   }
 
 
-  const handleLogin = () => {
-
-
+const handleLogin = () => {
 const auth = getAuth();
-signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
     navigation.navigate('Home');
     // Signed in 
     const user = userCredential.user; // userCredential est la reponse ( info)  de l'utilisateur connecté
     //comment enregister les infos dans le memoire de l'appli 
-  })
+           })
+           
+  //error case 
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    //Display a message error  on the view
+     alert(`Error ${errorCode} : ${errorMessage}`);
   });
-
   };
 
-  return (
+     return (
     <View style={styles.container}>
        {/* title */}
       <Text title center >Connexion</Text>
@@ -56,7 +58,9 @@ signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
       </TouchableOpacity>
       </View>
     </View>
+
   );
+
 };
 
 const styles = StyleSheet.create({
