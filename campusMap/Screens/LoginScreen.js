@@ -82,12 +82,14 @@ const styles = StyleSheet.create({
      color : "#003CA6" ,
   },
   input: {
-    width: '90%',
-    height: 50,
+    //height: 50,
     borderBottomWidth: 1.1, 
+    //borderBottomColor: '#1D1D1D',
     borderBottomColor:'#8e93a1',
-    marginBottom: 20,
+    marginBottom: 18,
     padding: 20,
+    fontSize : 18, // a revoir 
+    color: '#1D1D1D',
   },
   loginButton: {
     backgroundColor: '#003CA6',
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   loginButtonText: {
-    color: 'white',
+    color: '#FFFFFF',
     textAlign: 'center',
   },
 });
