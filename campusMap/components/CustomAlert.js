@@ -37,19 +37,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   modalTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
+    color: '#333333', 
     marginBottom: 10,
   },
   modalDescription: {
     fontSize: 16,
     marginBottom: 20,
     textAlign: 'center',
+    color: '#666666', // Couleur de la description
   },
   closeButton: {
-    backgroundColor: 'blue',
+    backgroundColor: '#007bff', // to change 
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 8,
   },
   closeButtonText: {
     color: 'white',
