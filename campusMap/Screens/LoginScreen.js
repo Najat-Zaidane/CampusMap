@@ -33,6 +33,8 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+   // console.log(`ERREUR : ${errorMessage}`);
+   
     //Display a styled message error  on the view 
     setErrorVisible(true);
   });

@@ -17,40 +17,17 @@ const SignUpScreen = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorVisible, setErrorVisible] = useState(false);
 
-  // const handleSignUp = () => {
-  //   // Si l'utilisateur n'a pas rempli tous les champs
-  //   if (!fname || !lname || !email || !password || !confirmPassword) {
-  //     return setErrorVisible(true);
-  //   }
-  
-  //   // Si les mots de passe ne correspondent pas
-  //   if (password !== confirmPassword) {
-  //     return setErrorVisible(true);
-  //   }
-  
-  //   // Création d'un nouvel utilisateur avec l'authentification Firebase
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Récupération de l'utilisateur créé
-  //       const user = userCredential.user;
-  //       // Mise à jour du profil utilisateur avec le nom et le prénom
-  //       updateProfile(user, { displayName: fname + " " + lname })
-  //         .then(() => {
-  //           navigation.navigate('Home');
-  //         })
-  //         .catch((error) => {
-  //           setErrorVisible(true);
-  //         });
-  //     })
-  //     .catch((error) => {
-  //       setErrorVisible(true);
-  //     });
-  // };
-  
-  const handleSignUp = () => {  
+  const handleSignUp = () => { 
+
+    // Si l'utilisateur n'a pas rempli tous les champs
+   if (!fname || !lname || !email || !password || !confirmPassword) {
+     return setErrorVisible(true);
+     } 
+
+
     if (password !== confirmPassword) {
-      setErrorVisible(true);
-      return;
+      return setErrorVisible(true);
+      
     }
     const auth = getAuth();
     // Create user account
@@ -62,12 +39,11 @@ const SignUpScreen = ({ navigation }) => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
+       // console.log("erruuuuuuuuuuuuuur est  :", error.message); le test 
         //Display a styled message error  on the view
         setErrorVisible(true);
       });
-  };
-
+    };
 
 
     return (
