@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, StyleSheet,ScrollView } from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import CustomAlert from '../components/CustomAlert';
 import  Text  from '@kaloraat/react-native-text';
 import Logo from './Logo';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 
@@ -41,7 +42,7 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
   };
 
      return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView contentContainerStyle={styles.container}>
        
        {/* logo */}
        
@@ -78,7 +79,7 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
       <CustomAlert visible={errorVisible} onClose={() => setErrorVisible(false)} />
 
       </View>
-    </View>
+    </KeyboardAwareScrollView>
 
   );
 
