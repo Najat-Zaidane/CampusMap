@@ -1,29 +1,26 @@
-import { SafeAreaView, Text,StyleSheet, Button } from "react-native";
+import React, {useContext} from "react";
+import {StyleSheet, Button ,View} from "react-native";
+import  Text  from '@kaloraat/react-native-text';
+import FooterTabs from "../components/nav/FooterTabs";
+
+
+
 
 
 function HomeScreen({navigation}) {
 
     
     return (
-        
-        <SafeAreaView style={styles.container}>
-            <Text> Home Screen</Text>
-            <Button title="vers profile " onPress={()=>navigation.navigate('Profile')} />
-     </SafeAreaView>
+
+           <FooterTabs/>
    
    
-   );
+        );
 }
 
 
 
 
-
-    const styles=StyleSheet.create ({
-        container : {
-            flex : 1,
-        }}
-    );
 
 export default HomeScreen;
  
