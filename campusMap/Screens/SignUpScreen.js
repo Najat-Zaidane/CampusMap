@@ -39,7 +39,7 @@ const SignUpScreen = ({ navigation }) => {
       })
       .catch((error) => {
         const errorCode = error.code;
-       // console.log("erruuuuuuuuuuuuuur est  :", error.message); le test 
+         //console.log("erruuuuuuuuuuuuuur est  :", error.message); 
         //Display a styled message error  on the view
         setErrorVisible(true);
       });
