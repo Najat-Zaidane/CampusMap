@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth,auth,createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Logo from './Logo';
 import Text from '@kaloraat/react-native-text';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
@@ -19,8 +19,8 @@ const SignUpScreen = ({ navigation }) => {
   const handleSignUp = () => {
 
     //if the user didn't fill all the informations 
-    if (!fname || !lname || !email || !password || !confirmPassword )
-          { return setErrorVisible(true) ; }
+    if (!fname || !lname || !email || !password || !confirmPassword ) {
+         return setErrorVisible(true) ; }
 
     //checking if the two passwords are identical
 
@@ -34,13 +34,22 @@ const SignUpScreen = ({ navigation }) => {
        
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        navigation.navigate('Home');
-      })
+        // get the created user 
+        const user = userCredential.user;
+        //update the user profil with the name and the lastname
+        updateProfile(user, { displayName: fname +" "+ lname})
+        .then(() => { 
+          navigation.navigate('Home');
+              })
       .catch((error) => {
         setErrorVisible(true);
       });
-  };
-}  
+    })
+    .catch((error) => {
+      setErrorVisible(true);
+    });
+} 
+  }; 
     return (
         <KeyboardAwareScrollView  contentContainerStyle={styles.container}>
 
@@ -88,6 +97,11 @@ const SignUpScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.signUpButton} onPress={handleSignUp}>
               <Text bold medium center style={styles.signUpButtonText}>S'inscrire</Text>
             </TouchableOpacity>
+
+            <Text center >
+              Vous avez déjà un compte ?
+              <Text color="#ff2222" onPress={() => navigation.navigate('Login')}> Connectez vous !</Text>
+            </Text> 
     
            
          {/* Affichez CustomAlert si errorVisible est vrai */}
@@ -126,10 +140,10 @@ const styles = StyleSheet.create({
     },
     signUpButton: {
       backgroundColor: '#003CA6',
-      padding: 12,
-      borderRadius: 20,
+      borderRadius: 30,
       justifyContent: 'center',
       marginBottom: 20,
+      marginTop:15,
       height: 50,
     },
     signUpButtonText: {

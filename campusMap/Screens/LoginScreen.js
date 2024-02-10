@@ -62,7 +62,6 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
         secureTextEntry // so the pwd isn't visible
         onChangeText={setPassword}
         value={password}
-        keyboardType="password"
       />
 
       {/*  submit button */}
@@ -72,9 +71,12 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
 
       {/* Affichez CustomAlert si errorVisible est vrai */}
       <CustomAlert visible={errorVisible} onClose={() => setErrorVisible(false)} />
-       <Text small center>Vous n'avez pas de compte ?
-         <Text color="#ff2222" > Créez-en un </Text> 
+       <Text small center >Vous n'avez pas de compte ?
+         <Text color="#ff2222" onPress= { () => navigation.navigate("Sign")} > Créez-en un </Text>  {/* add the onPress method  in the text*/}
        </Text>
+        {/* is the password is forgotten */}
+        <Text small center color="#003CA6" style={{marginTop:10}} >Mot de passe oublié ?</Text>
+{/* add the onPress method  in the text*/}
       </View>
     </KeyboardAwareScrollView>
 

@@ -31,21 +31,24 @@ const Stack=createStackNavigator();
 export default function App() {
     return(
    
-    // <NavigationContainer>
-    //  <Stack.Navigator screenOptions={{headerShown: false}}>
-    //    <Stack.Screen name='Login' component={LoginScreen}/>
-    //    <Stack.Screen name='Home' component={HomeScreen}/>
-    //  </Stack.Navigator>
-    // </NavigationContainer>
-   <SignUpScreen/>
+    <NavigationContainer>
+     <Stack.Navigator 
+     initialRouteName='Login'
+     screenOptions={{headerShown: false}}>
+       <Stack.Screen name='Login' component={LoginScreen}/>
+       <Stack.Screen name='Home' component={HomeScreen}/>
+       <Stack.Screen name='Sign' component={SignUpScreen}/>
+     </Stack.Navigator>
+    </NavigationContainer>
+   //<SignUpScreen/>
     
  );
 }
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
