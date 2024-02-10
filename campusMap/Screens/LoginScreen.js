@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import  Text  from '@kaloraat/react-native-text';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import CustomAlert from '../components/CustomAlert';
+import  Text  from '@kaloraat/react-native-text';
+import Logo from './Logo';
+
+
+
 
 const LoginScreen = ({ navigation }) => {
 
@@ -38,6 +42,11 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
 
      return (
     <View style={styles.container}>
+       
+       {/* logo */}
+       
+       <Logo />
+
        {/* title */}
       <Text title center style={styles.title}>Connexion</Text>
       <View style={{marginHorizontal : 24}}>
@@ -47,18 +56,22 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
         placeholder="Adresse e-mail"
         onChangeText={setEmail}
         value={email}
+        keyboardType="email-address"
       />
+      
       {/* pwd input */}
       <TextInput
         style={styles.input}
         placeholder="Mot de passe"
-        secureTextEntry
+        secureTextEntry // so the pwd isn't visible
         onChangeText={setPassword}
         value={password}
+        keyboardType="password"
       />
+
       {/*  submit button */}
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-        <Text style={styles.loginButtonText}>Se connecter</Text>
+      <Text bold medium center style={styles.loginButtonText}>Se connecter</Text>
       </TouchableOpacity>
 
       {/* Affichez CustomAlert si errorVisible est vrai */}
@@ -94,7 +107,10 @@ const styles = StyleSheet.create({
   loginButton: {
     backgroundColor: '#003CA6',
     padding: 12,
-    borderRadius: 15,
+    borderRadius: 20,
+    justifyContent: 'center',
+    marginBottom : 20,
+    height : 50
   },
   loginButtonText: {
     color: '#FFFFFF',

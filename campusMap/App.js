@@ -6,6 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import LoginScreen from './Screens/LoginScreen.js';
 import HomeScreen from  './Screens/HomeScreen.js';
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app"
 
