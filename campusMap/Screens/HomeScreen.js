@@ -5,8 +5,7 @@ function HomeScreen({navigation}) {
 
     
     return (
-
-
+        
         <SafeAreaView style={styles.container}>
             <Text> Home Screen</Text>
             <Button title="vers profile " onPress={()=>navigation.navigate('Profile')} />

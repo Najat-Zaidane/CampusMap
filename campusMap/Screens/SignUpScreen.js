@@ -20,10 +20,10 @@ const SignUpScreen = ({ navigation }) => {
   const handleSignUp = () => { 
 
     // Si l'utilisateur n'a pas rempli tous les champs
+
    if (!fname || !lname || !email || !password || !confirmPassword) {
      return setErrorVisible(true);
      } 
-
 
     if (password !== confirmPassword) {
       return setErrorVisible(true);
