@@ -4,6 +4,7 @@ import { getAuth,auth,createUserWithEmailAndPassword, updateProfile } from "fire
 import Logo from './Logo';
 import Text from '@kaloraat/react-native-text';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import CustomAlert2 from '../components/CustomAlert2';
 
 
 
@@ -16,40 +17,59 @@ const SignUpScreen = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorVisible, setErrorVisible] = useState(false);
 
-  const handleSignUp = () => {
-
-    //if the user didn't fill all the informations 
-    if (!fname || !lname || !email || !password || !confirmPassword ) {
-         return setErrorVisible(true) ; }
-
-    //checking if the two passwords are identical
-
-    else if (password !== confirmPassword) {
-     // alert('Les mots de passes ne sont pas identiques');
-      return setErrorVisible(true);
-      }
-
-    else{
-    //creating a new user with firebase authentication
-       
-      createUserWithEmailAndPassword(auth, email, password)
+  // const handleSignUp = () => {
+  //   // Si l'utilisateur n'a pas rempli tous les champs
+  //   if (!fname || !lname || !email || !password || !confirmPassword) {
+  //     return setErrorVisible(true);
+  //   }
+  
+  //   // Si les mots de passe ne correspondent pas
+  //   if (password !== confirmPassword) {
+  //     return setErrorVisible(true);
+  //   }
+  
+  //   // Création d'un nouvel utilisateur avec l'authentification Firebase
+  //   createUserWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       // Récupération de l'utilisateur créé
+  //       const user = userCredential.user;
+  //       // Mise à jour du profil utilisateur avec le nom et le prénom
+  //       updateProfile(user, { displayName: fname + " " + lname })
+  //         .then(() => {
+  //           navigation.navigate('Home');
+  //         })
+  //         .catch((error) => {
+  //           setErrorVisible(true);
+  //         });
+  //     })
+  //     .catch((error) => {
+  //       setErrorVisible(true);
+  //     });
+  // };
+  
+  const handleSignUp = () => {  
+    if (password !== confirmPassword) {
+      setErrorVisible(true);
+      return;
+    }
+    const auth = getAuth();
+    // Create user account
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // get the created user 
-        const user = userCredential.user;
-        //update the user profil with the name and the lastname
-        updateProfile(user, { displayName: fname +" "+ lname})
-        .then(() => { 
-          navigation.navigate('Home');
-              })
+        navigation.navigate('Home');
+        // Signed in 
+         const user = userCredential.user;
+      })
       .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        //Display a styled message error  on the view
         setErrorVisible(true);
       });
-    })
-    .catch((error) => {
-      setErrorVisible(true);
-    });
-} 
-  }; 
+  };
+
+
+
     return (
         <KeyboardAwareScrollView  contentContainerStyle={styles.container}>
 
@@ -102,15 +122,10 @@ const SignUpScreen = ({ navigation }) => {
               Vous avez déjà un compte ?
               <Text color="#ff2222" onPress={() => navigation.navigate('Login')}> Connectez vous !</Text>
             </Text> 
-    
            
          {/* Affichez CustomAlert si errorVisible est vrai */}
-            {errorVisible && (
-              <View style={styles.errorContainer}>
-                <Text style={styles.errorMessage}>Erreur lors de la création du compte. Veuillez réessayer.</Text>
-              </View>
-            )}
-
+         <CustomAlert2 visible={errorVisible} onClose={() => setErrorVisible(false)} />
+   
           </View>
         </KeyboardAwareScrollView>
       );
@@ -148,16 +163,6 @@ const styles = StyleSheet.create({
     },
     signUpButtonText: {
       color: '#FFFFFF',
-      textAlign: 'center',
-    },
-    errorContainer: {
-      backgroundColor: '#FFC0CB',
-      padding: 12,
-      borderRadius: 8,
-      marginTop: 8,
-    },
-    errorMessage: {
-      color: '#FF0000',
       textAlign: 'center',
     },
   });

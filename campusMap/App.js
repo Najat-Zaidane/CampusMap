@@ -36,8 +36,8 @@ export default function App() {
      initialRouteName='Login'
      screenOptions={{headerShown: false}}>
        <Stack.Screen name='Login' component={LoginScreen}/>
-       <Stack.Screen name='Home' component={HomeScreen}/>
        <Stack.Screen name='Sign' component={SignUpScreen}/>
+       <Stack.Screen name='Home' component={HomeScreen}/>
      </Stack.Navigator>
     </NavigationContainer>
    //<SignUpScreen/>
