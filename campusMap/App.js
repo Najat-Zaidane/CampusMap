@@ -6,6 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import LoginScreen from './Screens/LoginScreen.js';
 import HomeScreen from  './Screens/HomeScreen.js';
+import SignUpScreen from './Screens/SignUpScreen.js'
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app"
@@ -30,22 +31,21 @@ const Stack=createStackNavigator();
 export default function App() {
     return(
    
-    <NavigationContainer>
-     <Stack.Navigator screenOptions={{headerShown: false}}>
-       <Stack.Screen name='Login' component={LoginScreen}/>
-       <Stack.Screen name='Home' component={HomeScreen}/>
-     </Stack.Navigator>
-    </NavigationContainer>
-  
+    // <NavigationContainer>
+    //  <Stack.Navigator screenOptions={{headerShown: false}}>
+    //    <Stack.Screen name='Login' component={LoginScreen}/>
+    //    <Stack.Screen name='Home' component={HomeScreen}/>
+    //  </Stack.Navigator>
+    // </NavigationContainer>
+   <SignUpScreen/>
     
  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });

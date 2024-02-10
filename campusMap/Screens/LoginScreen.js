@@ -15,13 +15,10 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [errorVisible, setErrorVisible] = useState(false); // Pour contrôler la visibilité de l'alerte
 
-
- 
   //if  user is already logged in then navigate to home screen directly
   // if (getAuth().currentUser) {
   //   navigation.navigate("Home");
   //   }
-
 
 const handleLogin = () => {
 const auth = getAuth();
@@ -43,9 +40,7 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
 
      return (
     <KeyboardAwareScrollView contentContainerStyle={styles.container}>
-       
-       {/* logo */}
-       
+         
        <Logo />
 
        {/* title */}
@@ -77,7 +72,9 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
 
       {/* Affichez CustomAlert si errorVisible est vrai */}
       <CustomAlert visible={errorVisible} onClose={() => setErrorVisible(false)} />
-
+       <Text small center>Vous n'avez pas de compte ?
+         <Text color="#ff2222" > Créez-en un </Text> 
+       </Text>
       </View>
     </KeyboardAwareScrollView>
 
