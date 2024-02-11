@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { StatusBar } from 'expo-status-bar';
+import { createStackNavigator } from '@react-navigation/stack'
 
 import LoginScreen from './Screens/LoginScreen.js';
 import HomeScreen from  './Screens/HomeScreen.js';
@@ -11,8 +10,8 @@ import SignUpScreen from './Screens/SignUpScreen.js'
 import { initializeApp } from "firebase/app"
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
-import ScreensNav from './components/nav/ScreensNav.js';
-import RootNavigation from './navigation.js';
+import HeaderTabs from './components/nav/HeaderTabs.js';
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -34,20 +33,19 @@ const auth = initializeAuth(app, {
 });
 
 const Stack=createStackNavigator();
+
 export default function App() {
     return(
-    //<ScreensNav/>
-    <RootNavigation/>
-    // <NavigationContainer>
-    //  <Stack.Navigator 
-    //  initialRouteName='Home'
-    //  screenOptions={{headerShown: false}}>
-    //    <Stack.Screen name='Login' component={LoginScreen}/>
-    //    <Stack.Screen name='Sign' component={SignUpScreen}/>
-    //    <Stack.Screen name='Home' component={HomeScreen}/>
-    //  </Stack.Navigator>
-    // </NavigationContainer>
-    
+    <NavigationContainer>
+     <Stack.Navigator 
+     initialRouteName='Home'
+     screenOptions={{headerShown: true}}>
+       <Stack.Screen name='Login' component={LoginScreen} options={{headerShown : false,headerLeft:null}} />
+       <Stack.Screen name='Sign' component={SignUpScreen} options={{headerShown : false}}/>
+       <Stack.Screen name='Home' component={HomeScreen} options={{title:"CampusMap" , headerRight : () => <HeaderTabs/>, }} />
+     
+     </Stack.Navigator>
+    </NavigationContainer>  
  );
 }
 

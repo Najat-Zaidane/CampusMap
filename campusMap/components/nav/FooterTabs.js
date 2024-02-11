@@ -1,11 +1,13 @@
-import React , {useState} from "react";
+import React from "react";
 import {View ,TouchableOpacity, StyleSheet} from "react-native";
 import  Text  from '@kaloraat/react-native-text';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { useNavigation } from "@react-navigation/native";
 
-export  const Tab = ({text,name}) => {
+export  const Tab = ({text,name,route}) => {
+  const navigation = useNavigation();
   return (
-  <TouchableOpacity style={styles.tab} >
+  <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate(route)} >
             <>
               <FontAwesome5 name={name} size={25} style={styles.icon}/>
               <Text  color="#003CA6">{text}</Text>
@@ -17,10 +19,10 @@ export  const Tab = ({text,name}) => {
 export default function FooterTabs() {
     return(
         <View style={styles.container}>
-          <Tab text="Acceuil"  name="home"/>
-          <Tab text="Evenement"  name="calendar-check"/>
-          <Tab text="localiser"  name="map-marked-alt"/>
-          <Tab text="Profile" name="user" />
+          <Tab text="Acceuil"  name="home" route='Home'/>
+          <Tab text="Evenement"  name="calendar-check" /* route ='Event'*/ /> 
+          <Tab text="localiser"  name="map-marked-alt" /* route ='Localisation'*/    />
+          <Tab text="Profile" name="user"  /* route ='profil'*/  />
         </View>
     );
 }

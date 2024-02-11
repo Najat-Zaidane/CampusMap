@@ -1,3 +1,6 @@
+
+// this component  is used to navigate between different screens in the app, we can import it in the app.js
+
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from '../../Screens/LoginScreen.js';
