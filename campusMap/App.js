@@ -12,6 +12,7 @@ import SignUpScreen from './Screens/SignUpScreen.js'
 import { initializeApp } from "firebase/app"
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+import ScreensNav from './components/nav/ScreensNav.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -35,17 +36,16 @@ const auth = initializeAuth(app, {
 const Stack=createStackNavigator();
 export default function App() {
     return(
-   
-    <NavigationContainer>
-     <Stack.Navigator 
-     initialRouteName='Home'
-     screenOptions={{headerShown: false}}>
-       <Stack.Screen name='Login' component={LoginScreen}/>
-       <Stack.Screen name='Sign' component={SignUpScreen}/>
-       <Stack.Screen name='Home' component={HomeScreen}/>
-     </Stack.Navigator>
-    </NavigationContainer>
-   //<SignUpScreen/>
+    <ScreensNav/>
+    // <NavigationContainer>
+    //  <Stack.Navigator 
+    //  initialRouteName='Home'
+    //  screenOptions={{headerShown: false}}>
+    //    <Stack.Screen name='Login' component={LoginScreen}/>
+    //    <Stack.Screen name='Sign' component={SignUpScreen}/>
+    //    <Stack.Screen name='Home' component={HomeScreen}/>
+    //  </Stack.Navigator>
+    // </NavigationContainer>
     
  );
 }
