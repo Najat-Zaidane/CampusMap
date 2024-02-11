@@ -7,11 +7,14 @@ import FooterTabs from "../components/nav/FooterTabs";
 
 
 
+
 const HomeScreen = ({navigation}) => {
 
     
     return (
-            <SafeAreaView style={styles.container}>
+           
+        <SafeAreaView style={styles.container}>
+           <Text bold center>Hello </Text>
            <FooterTabs/>
            </SafeAreaView>
    
@@ -20,8 +23,8 @@ const HomeScreen = ({navigation}) => {
 
 const styles=StyleSheet.create ({
     container :{
-          flex : 1,
-          justifyContent : "space-between"
+           flex: 1,
+          justifyContent : "space-between",
     },
 });
  

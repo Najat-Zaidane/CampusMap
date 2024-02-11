@@ -1,6 +1,7 @@
 import React , {useState} from "react";
 import {View ,TouchableOpacity, StyleSheet} from "react-native";
 import  Text  from '@kaloraat/react-native-text';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default function FooterTabs() {
      
@@ -9,6 +10,7 @@ export default function FooterTabs() {
 
            <TouchableOpacity>
             <>
+              <FontAwesome5 name="home"/>
               <Text>Aceuill</Text>
             </>
            </TouchableOpacity>
