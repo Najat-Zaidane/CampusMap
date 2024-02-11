@@ -2,7 +2,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
 import LoginScreen from './Screens/LoginScreen.js';
 import HomeScreen from  './Screens/HomeScreen.js';
@@ -13,6 +12,7 @@ import { initializeApp } from "firebase/app"
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 import ScreensNav from './components/nav/ScreensNav.js';
+import RootNavigation from './navigation.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -36,7 +36,8 @@ const auth = initializeAuth(app, {
 const Stack=createStackNavigator();
 export default function App() {
     return(
-    <ScreensNav/>
+    //<ScreensNav/>
+    <RootNavigation/>
     // <NavigationContainer>
     //  <Stack.Navigator 
     //  initialRouteName='Home'
@@ -49,11 +50,4 @@ export default function App() {
     
  );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
