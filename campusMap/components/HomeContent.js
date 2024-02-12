@@ -26,7 +26,7 @@ const HomeContent = () => {
       {/* Conteneur pour le message et texte de bienvenue */}
       <View style={styles.welcomeContainer}>
         <Text style={styles.welcomeText}>Explorez Notre Faculté</Text>
-        <Text style={styles.introText}>Découvrez notre faculté à travers nos différentes sections</Text>
+        <Text center style={styles.introText}>Découvrez notre faculté à travers nos différentes sections</Text>
       </View>
  
       {/* Conteneur pour les sections cliquables */}
@@ -71,12 +71,13 @@ const styles = StyleSheet.create({
   sectionButton: {
     flexDirection: 'row',
     alignItems: 'center',
-
     backgroundColor: '#E8B73A', // i nedd a background image
     padding: 30, // a revoir 
-    width : 350,
+   width : 350,
     borderRadius: 20,
     marginBottom: 25,
+     paddingVertical: 20, // Utilisation de padding vertical pour ajuster la hauteur
+     paddingHorizontal: 40,
   },
   sectionButtonText: {
     fontSize: 20,
