@@ -2,18 +2,24 @@
 //it displays a list of items that can be clicked on and navigates to different pages based on what was clicked
 
 import React from "react";
-import { View, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
+import { View, TouchableOpacity, StyleSheet, SafeAreaView ,ImageBackground } from "react-native";
 import Text from '@kaloraat/react-native-text';
 import { useNavigation } from "@react-navigation/native";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 //this component  displays a single item on the home page
-export const Section = ({sectionNameRoute,sectionName}) =>{
+export const Section = ({sectionNameRoute,sectionName,source}) =>{
     const navigation = useNavigation();
 return (
-    <TouchableOpacity style={styles.sectionButton} onPress={() => navigation.navigate(sectionNameRoute)}>
+    <TouchableOpacity onPress={() => navigation.navigate(sectionNameRoute)}>
+          <ImageBackground
+          source={source}
+          style={styles.sectionButton}
+          resizeMode="cover" 
+          >
           <Text style={styles.sectionButtonText}>{sectionName}</Text>
           <FontAwesome5 name="chevron-right" size={25} style={styles.icon}/>
+          </ImageBackground>
         </TouchableOpacity>
 );
 };
@@ -31,7 +37,7 @@ const HomeContent = () => {
  
       {/* Conteneur pour les sections cliquables */}
       <View style={styles.sectionContainer}>
-       <Section  sectionNameRoute='Administration' sectionName='Administration' />
+       <Section  sectionNameRoute='Administration' sectionName='Administration' source={require('../assets/fac1.jpeg')} />
         <Section  sectionNameRoute='Departments' sectionName='Départements' /> 
         <Section  sectionNameRoute='EspaceLoisirs' sectionName='Espace Loisirs' />
       </View>
@@ -71,13 +77,11 @@ const styles = StyleSheet.create({
   sectionButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#E8B73A', // i nedd a background image
-    padding: 30, // a revoir 
-   width : 350,
-    borderRadius: 20,
+    backgroundColor: '#E8B73A', // i need a background image
+    borderRadius: 22,
     marginBottom: 25,
-     paddingVertical: 20, // Utilisation de padding vertical pour ajuster la hauteur
-     paddingHorizontal: 40,
+    paddingVertical: 22, // Utilisation de padding vertical pour ajuster la hauteur
+    paddingHorizontal: 75,
   },
   sectionButtonText: {
     fontSize: 20,
