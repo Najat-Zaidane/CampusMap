@@ -1,16 +1,38 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const AdministrationScreen = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Administration</Text>
-            <Text style={styles.section}>Guichets de bourses</Text>
-            <Text style={styles.section}>Affaires des étudiants</Text>
-            <Text style={styles.section}>Bureau de réclamation</Text>
+
+            <View>
+            <Text style={styles.section}>Guichets de bourses <FontAwesome5 name="money-check-alt" size={10} style={styles.icon} /> </Text>
+            <Text>description</Text>
+            </View>
+
+
+            <View>
+            <Text style={styles.section}><FontAwesome5 name="user-graduate" style={styles.icon} /> Guichets des affaires étudiantes</Text>
+            <Text>description</Text>
+            </View>
+
+         
+            <Text style={styles.section}><FontAwesome5 name="exclamation-circle" style={styles.icon} />Bureau de réclamations</Text>
+            <Text>description</Text>
+
+            <View>
             <Text style={styles.section}>Bureau du doyen</Text>
+            <Text>description</Text>
+            </View>
+            
+            <View>
             <Text style={styles.section}>Bureau du vice-doyen</Text>
-            {/* Ajoutez d'autres sections selon vos besoins */}
+            <Text>description</Text>
+            </View>
+
+        
         </View>
     );
 };
