@@ -14,6 +14,8 @@ import { initializeApp } from "firebase/app"
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 import HeaderTabs from './components/nav/HeaderTabs.js';
+import AproposScreen from './Screens/AproposScreen.js';
+import HeaderTabLeft from './components/nav/HeaderTabLeft.js';
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -46,10 +48,12 @@ export default function App() {
      screenOptions={{headerShown: true}}>
        <Stack.Screen name='Login' component={LoginScreen} options={{headerShown : false,headerLeft:null}} />
        <Stack.Screen name='Sign' component={SignUpScreen} options={{headerShown : false}}/>
-       <Stack.Screen name='Home' component={HomeScreen} options={{title:"CampusMap" , headerRight : () => <HeaderTabs/>, }} />
+       <Stack.Screen name='Home' component={HomeScreen} options={{title:"CampusMap" , headerRight : () => <HeaderTabs/> }} />
        <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name="Event" component={EventScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name="Map" component={MapScreen} options={{headerShown : false,headerLeft:null}}  />
+       <Stack.Screen name='Apropos' component={AproposScreen} options={{title:"CampusMap" , headerLeft : () => <HeaderTabLeft/> }}  />
+
      </Stack.Navigator>
     </NavigationContainer>  
  );

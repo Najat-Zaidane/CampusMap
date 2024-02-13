@@ -9,8 +9,8 @@ const HeaderTabs = () => {
    const navigation = useNavigation();
     return(
     <SafeAreaView>
-       <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
-        <FontAwesome5 name="sign-out-alt" size={25} style={styles.icon} />
+       <TouchableOpacity onPress={()=>navigation.navigate('Home')}>
+        <FontAwesome5 name="reply" size={22} style={styles.icon} />
        </TouchableOpacity>
     </SafeAreaView>
     );
@@ -22,7 +22,8 @@ const styles=StyleSheet.create({
         marginBottom : 3,
         alignSelf : "center",
         color : "#003CA6",
-        marginRight : 10
+        marginLeft : 10
+        
      }
 });
 export default HeaderTabs;

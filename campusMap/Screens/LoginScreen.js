@@ -3,7 +3,7 @@ import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import CustomAlert from '../components/CustomAlert';
 import  Text  from '@kaloraat/react-native-text';
-import Logo from './Logo';
+import Logo from '../components/Logo';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 

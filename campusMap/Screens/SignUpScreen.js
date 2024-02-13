@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { getAuth,auth,createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import Logo from './Logo';
+import Logo from '../components/Logo';
 import Text from '@kaloraat/react-native-text';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import CustomAlert2 from '../components/CustomAlert2';
@@ -49,7 +49,7 @@ const SignUpScreen = ({ navigation }) => {
     return (
         <KeyboardAwareScrollView  contentContainerStyle={styles.container}>
 
-          <Logo />
+        <Logo/>
     
           <Text title center style={styles.title}>Créer un compte</Text>
           <View style={{ marginHorizontal: 24 }}>
