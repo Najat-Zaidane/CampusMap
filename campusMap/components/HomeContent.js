@@ -16,7 +16,7 @@ return (
           source={source}
           style={styles.sectionButton}
           resizeMode="cover" 
-       
+          blurRadius={10}
           >
           <Text style={styles.sectionButtonText}>{sectionName}</Text>
           <FontAwesome5 name="chevron-right" size={25} style={styles.icon}/>
@@ -40,8 +40,8 @@ const HomeContent = () => {
       <View style={styles.sectionContainer}>
        <Section  sectionNameRoute='Apropos' sectionName='A Propos' source={require('../assets/fac1.jpeg')} />
        <Section  sectionNameRoute='Administration' sectionName='Administration' source={require('../assets/fac2.jpg')} />
-        <Section  sectionNameRoute='Departments' sectionName='Départements'  source={require('../assets/fac4.jpg')}/> 
-        <Section  sectionNameRoute='EspaceLoisirs' sectionName='Espace Loisirs' source={require('../assets/fac5.jpg')}/>
+        <Section  sectionNameRoute='Department' sectionName='Départements'  source={require('../assets/fac4.jpg')}/> 
+        <Section  sectionNameRoute='EspaceLoisir' sectionName='Espace Loisirs' source={require('../assets/fac5.jpg')}/>
       </View>
 
     </ScrollView>
@@ -62,30 +62,29 @@ const styles = StyleSheet.create({
   welcomeContainer: {
     alignItems: 'center',
     marginBottom: 10,
-    marginTop : 20
   },
   welcomeText: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
     textTransform: 'uppercase',
     color : "#1D828E",
   },
   introText: {
-    fontSize: 17,
+    fontSize: 16,
     textAlign: 'center',
     color: '#140F1F', 
   },
   sectionContainer: {
-    marginTop: 15,
+    marginTop: 30,
   },
   sectionButton: {
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 22,
     marginBottom: 25,
-    paddingVertical: 38, // ajuster la hauteur
-    paddingHorizontal: 75,
+    paddingVertical: 30, // ajuster la hauteur
+    paddingHorizontal: 72,
     overflow: 'hidden',
     justifyContent: 'center',
   },
