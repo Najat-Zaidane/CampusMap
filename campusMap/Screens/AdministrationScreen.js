@@ -52,16 +52,24 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         color: "#1D828E",
     },
-    section:{
-
+    section:{ // a revoir
+        marginBottom: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: "#ccc",
+        paddingBottom: 20,
     },
     sectionTitle: {
         fontSize: 18,
         marginBottom: 10,
         color: "#140F1F",
     },
-    sectionText : {
-
+    sectionText : { // a revoir
+        fontSize: 16,
+        color: "#333",
+    },
+    icon: { // a revoir
+        marginRight: 10,
+        color: "#1D828E",
     },
 });
 
