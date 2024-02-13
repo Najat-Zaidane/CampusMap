@@ -4,7 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import LoginScreen from './Screens/LoginScreen.js';
 import HomeScreen from  './Screens/HomeScreen.js';
-import SignUpScreen from './Screens/SignUpScreen.js'
+import SignUpScreen from './Screens/SignUpScreen.js';
+import ProfileScreen from './Screens/ProfileScreen.js';
+import EventScreen from './Screens/EventScreen.js';
+import MapScreen from './Screens/MapScreen.js';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app"
@@ -36,6 +39,7 @@ const Stack=createStackNavigator();
 
 export default function App() {
     return(
+
     <NavigationContainer>
      <Stack.Navigator 
      initialRouteName='Home'
@@ -43,7 +47,9 @@ export default function App() {
        <Stack.Screen name='Login' component={LoginScreen} options={{headerShown : false,headerLeft:null}} />
        <Stack.Screen name='Sign' component={SignUpScreen} options={{headerShown : false}}/>
        <Stack.Screen name='Home' component={HomeScreen} options={{title:"CampusMap" , headerRight : () => <HeaderTabs/>, }} />
-     
+       <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown : false,headerLeft:null}}  />
+       <Stack.Screen name="Event" component={EventScreen} options={{headerShown : false,headerLeft:null}}  />
+       <Stack.Screen name="Map" component={MapScreen} options={{headerShown : false,headerLeft:null}}  />
      </Stack.Navigator>
     </NavigationContainer>  
  );

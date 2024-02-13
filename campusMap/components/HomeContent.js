@@ -2,8 +2,8 @@
 //it displays a list of items that can be clicked on and navigates to different pages based on what was clicked
 
 import React from "react";
-import { View, TouchableOpacity, StyleSheet, SafeAreaView ,ImageBackground } from "react-native";
-import Text from '@kaloraat/react-native-text';
+import { View, TouchableOpacity, StyleSheet, SafeAreaView ,ImageBackground, ScrollView,Text } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
@@ -16,6 +16,7 @@ return (
           source={source}
           style={styles.sectionButton}
           resizeMode="cover" 
+       
           >
           <Text style={styles.sectionButtonText}>{sectionName}</Text>
           <FontAwesome5 name="chevron-right" size={25} style={styles.icon}/>
@@ -27,7 +28,7 @@ return (
 const HomeContent = () => {
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
 
       {/* Conteneur pour le message et texte de bienvenue */}
       <View style={styles.welcomeContainer}>
@@ -37,14 +38,13 @@ const HomeContent = () => {
  
       {/* Conteneur pour les sections cliquables */}
       <View style={styles.sectionContainer}>
-       <Section  sectionNameRoute='Administration' sectionName='Administration' source={require('../assets/fac1.jpeg')} />
-        <Section  sectionNameRoute='Departments' sectionName='Départements' /> 
-        <Section  sectionNameRoute='EspaceLoisirs' sectionName='Espace Loisirs' />
+       <Section  sectionNameRoute='Apropos' sectionName='A Propos' source={require('../assets/fac1.jpeg')} />
+       <Section  sectionNameRoute='Administration' sectionName='Administration' source={require('../assets/fac2.jpg')} />
+        <Section  sectionNameRoute='Departments' sectionName='Départements'  source={require('../assets/fac4.jpg')}/> 
+        <Section  sectionNameRoute='EspaceLoisirs' sectionName='Espace Loisirs' source={require('../assets/fac5.jpg')}/>
       </View>
 
-      {/* Faculty presenation section */}
-
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -54,43 +54,53 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F8EFE0',
+    backgroundColor: '#F8EFE0', 
+    marginTop:10,
+    marginBottom: 15
   },
+
   welcomeContainer: {
     alignItems: 'center',
     marginBottom: 10,
+    marginTop : 20
   },
   welcomeText: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 15,
+    marginBottom: 10,
     textTransform: 'uppercase',
+    color : "#1D828E",
   },
   introText: {
-    fontSize: 18,
+    fontSize: 17,
     textAlign: 'center',
-    //color: '#', 
+    color: '#140F1F', 
   },
   sectionContainer: {
-    marginTop: 20,
+    marginTop: 15,
   },
   sectionButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#E8B73A', // i need a background image
     borderRadius: 22,
     marginBottom: 25,
-    paddingVertical: 22, // Utilisation de padding vertical pour ajuster la hauteur
+    paddingVertical: 38, // ajuster la hauteur
     paddingHorizontal: 75,
+    overflow: 'hidden',
+    justifyContent: 'center',
   },
   sectionButtonText: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
-    marginRight: 20,
-    color: '#003CA6',
+    marginRight: 18,
+  // color: '#FEAC5D',
+    color: '#FFFFFF',
+  
   },
 icon: {
-    color: '#003CA6',
+    color: '#FFFFFF',
+    //color: '#FEAC5D',
+
   },
 });
 

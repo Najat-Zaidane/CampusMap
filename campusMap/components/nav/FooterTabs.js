@@ -20,9 +20,10 @@ export default function FooterTabs() {
     return(
         <View style={styles.container}>
           <Tab text="Acceuil"  name="home" route='Home'/>
-          <Tab text="Evenement"  name="calendar-check" /* route ='Event'*/ /> 
-          <Tab text="localiser"  name="map-marked-alt" /* route ='Localisation'*/    />
-          <Tab text="Profile" name="user"  /* route ='profil'*/  />
+          <Tab text="Evenement"  name="calendar-check"  route ='Event' /> 
+          <Tab text="localiser"  name="map-marked-alt"  route ='Map'    />
+          <Tab text="Profile"     name="user"   route ='Profile' />  
+          {/* indice : le props route doint contenir le le nom de stackScreen pas le component */}
         </View>
     );
 }

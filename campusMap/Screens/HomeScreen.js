@@ -5,13 +5,8 @@ import FooterTabs from "../components/nav/FooterTabs";
 import HomeContent from "../components/HomeContent";
 
 
-
-
-
-
 const HomeScreen = ({navigation}) => {
 
-    
     return (
            
         <SafeAreaView style={styles.container}>
