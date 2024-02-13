@@ -5,34 +5,35 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 const AdministrationScreen = () => {
     return (
         <View style={styles.container}>
+
             <Text style={styles.title}>Administration</Text>
 
-            <View>
-            <Text style={styles.section}>Guichets de bourses <FontAwesome5 name="money-check-alt" size={10} style={styles.icon} /> </Text>
-            <Text>description</Text>
+            <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Guichets de bourses <FontAwesome5 name="money-check-alt" size={10} style={styles.icon} /> </Text>
+            <Text style={styles.sectionText}>description</Text>
             </View>
 
 
-            <View>
-            <Text style={styles.section}><FontAwesome5 name="user-graduate" style={styles.icon} /> Guichets des affaires étudiantes</Text>
-            <Text>description</Text>
+            <View style={styles.section}>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="user-graduate" style={styles.icon} /> Guichets des affaires étudiantes</Text>
+            <Text style={styles.sectionText}>description</Text>
             </View>
 
-         
-            <Text style={styles.section}><FontAwesome5 name="exclamation-circle" style={styles.icon} />Bureau de réclamations</Text>
-            <Text>description</Text>
+             <View style={styles.section}>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="exclamation-circle" style={styles.icon} />Bureau de réclamations</Text>
+            <Text style={styles.sectionText}>description</Text>
+            </View>
 
-            <View>
-            <Text style={styles.section}>Bureau du doyen</Text>
-            <Text>description</Text>
+            <View style={styles.section}>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="user-tie" style={styles.icon} />Bureau du doyen</Text>
+            <Text style={styles.sectionText}>description</Text>
             </View>
             
-            <View>
-            <Text style={styles.section}>Bureau du vice-doyen</Text>
-            <Text>description</Text>
+            <View style={styles.section}>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="user-secret" style={styles.icon} />Bureau du vice-doyen</Text>
+            <Text style={styles.sectionText}>description</Text>
             </View>
 
-        
         </View>
     );
 };
@@ -51,10 +52,16 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         color: "#1D828E",
     },
-    section: {
+    section:{
+
+    },
+    sectionTitle: {
         fontSize: 18,
         marginBottom: 10,
         color: "#140F1F",
+    },
+    sectionText : {
+
     },
 });
 
