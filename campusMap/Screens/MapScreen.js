@@ -60,7 +60,9 @@ export default function MapScreen() {
         provider={PROVIDER_GOOGLE}
         showsUserLocation={true}
         showsMyLocationButton={true}
-        followsUserLocation={true} // the map will follow the user's location
+        followsUserLocation={true} // the map will follow the user's location2
+        showsCompass={true} //affichage de la boussole
+        zoomEnabled={true}
       >
         <Marker
           coordinate={{

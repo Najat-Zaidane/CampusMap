@@ -2,20 +2,30 @@ import React from 'react';
 import { SafeAreaView, FlatList, View, Text, Image, StyleSheet } from 'react-native';
 import FooterTabs from "../components/nav/FooterTabs";
 
+//images 
+
+
 const events = [
     {
         id: '1',
         title: 'La seconde édition des journées doctorales - Information quantique et ses aplications',
         description: 'Faculté des sciences d’El Jadida 09-10 Décembre 2022',
-        imageUri: 'https://example.com/image1.jpg',
+        imageUri: 'https://www.lebigdata.fr/wp-content/uploads/2018/08/informatique-quantique-big-data.jpg',
     },
     {
         id: '2',
         title: 'La science au service du développement durable',
         description: 'Faculté des sciences d’El Jadida 9 -10 Mars 2023 ',
-        imageUri: 'https://example.com/image2.jpg',
+        imageUri: 'https://i.ytimg.com/vi/_8dWI0M3CFw/maxresdefault.jpg',
     },
-    // Ajoutez d'autres événements ici
+    
+    {
+        id: '3',
+        title: 'La 13ème Édition Des Rencontres Marocaines Sur La Chimie De L’Etat Solide',
+        description: 'Faculté des sciences d’El Jadida Avril 2024 ',
+        imageUri: 'https://mams.ma/wp-content/uploads/2017/02/Affiche_13_edition_REMCES_2021_1.png',
+    },
+
 ];
 
 const EventScreen = () => {
@@ -31,6 +41,7 @@ const EventScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
+              <Text style={styles.title}>Les Evénements </Text>
             <FlatList
                 data={events}
                 keyExtractor={(item) => item.id}
@@ -47,19 +58,26 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F8EFE0',
     },
+    title: {
+        fontSize: 22,
+         marginTop: 30,
+        fontWeight: "bold",
+        //marginBottom: 20,
+        color: "#1D828E",
+        textAlign: 'center',
+    },
     listContainer: {
         paddingHorizontal: 20,
         marginVertical : 30,
         paddingBottom: 18,
     },
     eventContainer: {
-        
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 1,
+        marginBottom: 16,
         borderBottomWidth: 1,
-        borderBottomColor: '#CCCCCC',
-        paddingBottom: 8,
+        borderBottomColor: '#E2AB2D',
+        paddingBottom: 10,
     },
     eventImage: {
         width: 100,
@@ -72,7 +90,7 @@ const styles = StyleSheet.create({
     eventTitle: {
         fontSize: 16,
         fontWeight: 'bold',
-        marginBottom: 6,
+        marginBottom: 7,
     },
     eventDescription: {
         fontSize: 16,

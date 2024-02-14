@@ -90,7 +90,6 @@ const styles=StyleSheet.create({
       shadowOffset:{width:1,height:1},
       shadowOpacity:0.9,
       shadowRadius:5,
-      //elevation:2,
       },
       img : {
         width: 350,
@@ -105,7 +104,7 @@ const styles=StyleSheet.create({
      width : 160,
      height : 80,
      resizeMode:"contain",
-     elevation : 5 ,
+    // elevation : 5 ,
     },
 });
 

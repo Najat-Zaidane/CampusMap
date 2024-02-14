@@ -47,14 +47,14 @@ export default function App() {
 
     <NavigationContainer>
      <Stack.Navigator 
-     initialRouteName='Home'
+     initialRouteName='Login'
      screenOptions={{headerShown: true}}>
        <Stack.Screen name='Login' component={LoginScreen} options={{headerShown : false,headerLeft:null}} />
        <Stack.Screen name='Sign' component={SignUpScreen} options={{headerShown : false}}/>
        <Stack.Screen name='Home' component={HomeScreen} options={{title:"CampusMap"  }} />
        <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name="Event" component={EventScreen} options={{headerShown : false,headerLeft:null}}  />
-       <Stack.Screen name="Map" component={MapScreen} options={{headerShown : false,headerLeft:null}} initialParams={{ latitude: 37.78825, longitude: -122.4324, title: 'Destination Title' }} />
+       <Stack.Screen name="Map" component={MapScreen} options={{headerShown : false,headerLeft:null}} initialParams={{ latitude: 33.225664, longitude: -8.485759, title: 'Destination Title' }} />
        <Stack.Screen name='Apropos' component={AproposScreen} options={{title:"CampusMap" , headerLeft : () => <HeaderTabLeft/> }}  />
        <Stack.Screen name='Administration' component={AdministrationScreen} options={{title:"CampusMap" , headerLeft : () => <HeaderTabLeft/> }}  />
        <Stack.Screen name='Departement' component={DepartementScreen} options={{title:"CampusMap" , headerLeft : () => <HeaderTabLeft/> }}  />
