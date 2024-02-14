@@ -76,9 +76,10 @@ signInWithEmailAndPassword(auth, email, password).then(  (userCredential) => {
        <Text small center >Vous n'avez pas de compte ?
          <Text color="#ff2222" onPress= { () => navigation.navigate("Sign")} > Créez-en un </Text>  {/* add the onPress method  in the text*/}
        </Text>
-        {/* is the password is forgotten */}
-        <Text small center color="#003CA6" style={{marginTop:10}} >Mot de passe oublié ?</Text>
-{/* add the onPress method  in the text*/}
+       
+        {/* is the password is forgotten 
+        <Text small center color="#003CA6" style={{marginTop:10}} >Mot de passe oublié ?</Text> */}
+
       </View>
     </KeyboardAwareScrollView>
 

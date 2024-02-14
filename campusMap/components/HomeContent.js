@@ -40,7 +40,7 @@ const HomeContent = () => {
       <View style={styles.sectionContainer}>
        <Section  sectionNameRoute='Apropos' sectionName='A Propos' source={require('../assets/fac1.jpeg')} />
        <Section  sectionNameRoute='Administration' sectionName='Administration' source={require('../assets/fac2.jpg')} />
-        <Section  sectionNameRoute='Department' sectionName='Départements'  source={require('../assets/fac4.jpg')}/> 
+        <Section  sectionNameRoute='Departement' sectionName='Départements'  source={require('../assets/fac4.jpg')}/> 
         <Section  sectionNameRoute='EspaceLoisir' sectionName='Espace Loisirs' source={require('../assets/fac5.jpg')}/>
       </View>
 

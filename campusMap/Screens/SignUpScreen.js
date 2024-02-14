@@ -21,9 +21,13 @@ const SignUpScreen = ({ navigation }) => {
 
     // Si l'utilisateur n'a pas rempli tous les champs
 
-   if (!fname || !lname || !email || !password || !confirmPassword) {
-     return setErrorVisible(true);
-     } 
+  if (!fname || !lname || !email || !password || !confirmPassword ) {
+    return setErrorVisible(true);
+    }
+    if (!email.endsWith('ucd.ac.ma')) {
+        setError('Veuillez utiliser une adresse e-mail se terminant par ucd.ac.ma.');
+        return;
+      }
 
     if (password !== confirmPassword) {
       return setErrorVisible(true);
@@ -33,18 +37,25 @@ const SignUpScreen = ({ navigation }) => {
     // Create user account
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        navigation.navigate('Home');
         // Signed in 
-         const user = userCredential.user;
-      })
-      .catch((error) => {
+        const user = userCredential.user;
+        // Update user profile with name and surname 
+        updateProfile(user, {
+          displayName: fname + " " + lname
+        })
+
+        .then(() => {
+          // Profile updated
+          // Navigate to home screen
+          navigation.navigate('Home');  
+      }).catch((error) => {
         const errorCode = error.code;
          //console.log("erruuuuuuuuuuuuuur est  :", error.message); 
         //Display a styled message error  on the view
         setErrorVisible(true);
       });
-    };
-
+      });
+    }
 
     return (
         <KeyboardAwareScrollView  contentContainerStyle={styles.container}>
@@ -69,7 +80,7 @@ const SignUpScreen = ({ navigation }) => {
             />
             <TextInput
               style={styles.input}
-              placeholder="Adresse e-mail"
+              placeholder="Adresse e-mail : xxx@ucd.ac.ma"
               onChangeText={setEmail}
               value={email}
               keyboardType="email-address"

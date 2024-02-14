@@ -16,6 +16,7 @@ import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 import HeaderTabs from './components/nav/HeaderTabs.js';
 import AproposScreen from './Screens/AproposScreen.js';
 import AdministrationScreen from './Screens/AdministrationScreen.js';
+import DepartementScreen from './Screens/DepartementScreen.js';
 import HeaderTabLeft from './components/nav/HeaderTabLeft.js';
 
 
@@ -55,6 +56,7 @@ export default function App() {
        <Stack.Screen name="Map" component={MapScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name='Apropos' component={AproposScreen} options={{title:"CampusMap" , headerLeft : () => <HeaderTabLeft/> }}  />
        <Stack.Screen name='Administration' component={AdministrationScreen} options={{title:"CampusMap" , headerLeft : () => <HeaderTabLeft/> }}  />
+       <Stack.Screen name='Departement' component={DepartementScreen} options={{title:"CampusMap" , headerLeft : () => <HeaderTabLeft/> }}  />
 
      </Stack.Navigator>
     </NavigationContainer>  
