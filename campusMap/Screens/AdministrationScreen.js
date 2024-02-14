@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginBottom: 10,
         marginLeft: 7,
-        color: "#140F1F",
+        color: "#003CA6",
     },
     sectionText : { // a revoir
         fontSize: 16,

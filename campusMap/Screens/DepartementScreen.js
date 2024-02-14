@@ -4,34 +4,44 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const  DepartementScreen = () => {
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} >
 
             <Text style={styles.title}>Départements</Text>
 
             <View style={styles.section}>
-            <Text style={styles.sectionTitle}><FontAwesome5 name="money-check-alt" size={15} style={styles.icon} />Guichets de Bourses  </Text>
-            <Text style={styles.sectionText}>Les guichets de bourses sont disponibles pour toute information ou demande concernant les bourses d'études</Text>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="laptop" size={15} style={styles.icon} /> Département d'Informatique </Text>
+            <Text style={styles.sectionText}>Le département d'informatique propose des formations en informatique théorique et appliquée.</Text>
             </View>
 
 
             <View style={styles.section}>
-            <Text style={styles.sectionTitle}><FontAwesome5 name="user-graduate" size={15} style={styles.icon} /> Guichets des Affaires Etudiantes</Text>
-            <Text style={styles.sectionText}>Les guichets des affaires étudiantes sont là pour aider les étudiants dans leurs démarches administratives liées à la vie étudiante.</Text>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="calculator" size={15} style={styles.icon} /> Département de Mathématiques</Text>
+            <Text style={styles.sectionText}>Le département de mathématiques propose des formations en mathématiques pures et appliquées.</Text>
             </View>
 
              <View style={styles.section}>
-            <Text style={styles.sectionTitle}><FontAwesome5 name="exclamation-circle" size={15} style={styles.icon} />Bureau de Réclamations</Text>
-            <Text style={styles.sectionText}>Le bureau de réclamations est disponible pour toute réclamation ou suggestion concernant la vie universitaire.</Text>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="flask" size={15} style={styles.icon} /> Département de Physique</Text>
+            <Text style={styles.sectionText}>Le département de physique propose des formations en physique fondamentale et expérimentale.</Text>
             </View>
 
             <View style={styles.section}>
-            <Text style={styles.sectionTitle}><FontAwesome5 name="user-tie" size={15} style={styles.icon} />Bureau du Doyen</Text>
-            <Text style={styles.sectionText}>Le bureau du doyen est responsable de la gestion administrative et pédagogique de la faculté</Text>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="atom" size={15} style={styles.icon} /> Département de Chimie</Text>
+            <Text style={styles.sectionText}>Le département de chimie propose des formations en chimie générale et chimie appliquée.</Text>
             </View>
             
             <View style={styles.section}>
-            <Text style={styles.sectionTitle}><FontAwesome5 name="user-secret" size={15} style={styles.icon} />Bureau du Vice-Doyen</Text>
-            <Text style={styles.sectionText}>Le bureau du vice-doyen assiste le doyen dans ses fonctions et le remplace en son absence.</Text>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="globe" size={15} style={styles.icon} /> Département de Géologie</Text>
+            <Text style={styles.sectionText}>Le département de géologie propose des formations en géologie et géosciences.</Text>
+            </View>
+
+            <View style={styles.section}>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="leaf" size={15} style={styles.icon} /> Département de Biologie</Text>
+            <Text style={styles.sectionText}>Le département de biologie propose des formations en biologie cellulaire et moléculaire.</Text>
+            </View>
+
+            <View style={styles.section}>
+            <Text style={styles.sectionTitle}><FontAwesome5 name="graduation-cap" size={15} style={styles.icon} /> Département Doctoral</Text>
+            <Text style={styles.sectionText}>Le département doctoral propose des programmes de recherche avancée et de formation à la recherche.</Text>
             </View>
 
         </ScrollView>
@@ -41,8 +51,6 @@ const  DepartementScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-       //justifyContent: "center",
-       //alignItems: "center",
         backgroundColor: "#F8EFE0",
         padding:15
     },
@@ -65,15 +73,14 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginBottom: 10,
         marginLeft: 7,
-        color: "#140F1F",
+        color: "#003CA6",
     },
-    sectionText : { // a revoir
+    sectionText : {
         fontSize: 16,
         color: "#140F1F",
         marginLeft: 7,
     },
     icon: { 
-       // color: "#003CA6",
        color : '#E2AB2D',
        marginRight: 10,
     },
