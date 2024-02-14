@@ -47,7 +47,7 @@ export default function App() {
 
     <NavigationContainer>
      <Stack.Navigator 
-     initialRouteName='Login'
+     initialRouteName='Home'
      screenOptions={{headerShown: true}}>
        <Stack.Screen name='Login' component={LoginScreen} options={{headerShown : false,headerLeft:null}} />
        <Stack.Screen name='Sign' component={SignUpScreen} options={{headerShown : false}}/>
@@ -55,10 +55,10 @@ export default function App() {
        <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name="Event" component={EventScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name="Map" component={MapScreen} options={{headerShown : false,headerLeft:null}} initialParams={{ latitude: 33.225664, longitude: -8.485759, title: 'Destination Title' }} />
-       <Stack.Screen name='Apropos' component={AproposScreen} options={{headerLeft : () => <HeaderTabLeft/> }}  />
-       <Stack.Screen name='Administration' component={AdministrationScreen} options={{ headerLeft : () => <HeaderTabLeft/> }}  />
-       <Stack.Screen name='Departement' component={DepartementScreen} options={{headerLeft : () => <HeaderTabLeft/> }}  />
-       <Stack.Screen name='EspaceLoisir' component={LoisirScreen} options={{headerLeft : () => <HeaderTabLeft/> }}  />
+       <Stack.Screen name='Apropos' component={AproposScreen} options={{title:"" ,headerLeft : () => <HeaderTabLeft/> }}  />
+       <Stack.Screen name='Administration' component={AdministrationScreen} options={{title:"" , headerLeft : () => <HeaderTabLeft/> }}  />
+       <Stack.Screen name='Departement' component={DepartementScreen} options={{title:"" ,headerLeft : () => <HeaderTabLeft/> }}  />
+       <Stack.Screen name='EspaceLoisir' component={LoisirScreen} options={{title:"" , headerLeft : () => <HeaderTabLeft/> }}  />
 
        
 
