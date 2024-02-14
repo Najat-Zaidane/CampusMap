@@ -31,7 +31,8 @@
         "INTERNET",
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION"
-      ]
+      ],
+      "package": "com.najatzaidane.campusMap"
     },
     "web": {
       "favicon": "./assets/favicon.png"
