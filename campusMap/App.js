@@ -19,6 +19,7 @@ import AdministrationScreen from './Screens/AdministrationScreen.js';
 import DepartementScreen from './Screens/DepartementScreen.js';
 import HeaderTabLeft from './components/nav/HeaderTabLeft.js';
 import LoisirScreen from './Screens/LoisirScreen.js';
+import LocationsScreen from './Screens/LocationScreen.js';
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -55,6 +56,7 @@ export default function App() {
        <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name="Event" component={EventScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name="Map" component={MapScreen} options={{headerShown : false,headerLeft:null}} initialParams={{ latitude: 33.225664, longitude: -8.485759, title: 'Destination Title' }} />
+       <Stack.Screen name="Location" component={LocationsScreen} options={{headerShown : false,headerLeft:null}}  />
        <Stack.Screen name='Apropos' component={AproposScreen} options={{title:"" ,headerLeft : () => <HeaderTabLeft/> }}  />
        <Stack.Screen name='Administration' component={AdministrationScreen} options={{title:"" , headerLeft : () => <HeaderTabLeft/> }}  />
        <Stack.Screen name='Departement' component={DepartementScreen} options={{title:"" ,headerLeft : () => <HeaderTabLeft/> }}  />

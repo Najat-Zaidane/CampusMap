@@ -4,6 +4,8 @@ import  Text  from '@kaloraat/react-native-text';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from "@react-navigation/native";
 
+
+
 export  const Tab = ({text,name,route}) => {
   const navigation = useNavigation();
   return (
@@ -21,7 +23,8 @@ export default function FooterTabs() {
         <View style={styles.container}>
           <Tab text="Acceuil"  name="home" route='Home' />
           <Tab text="Evenement"  name="calendar-check"  route ='Event' /> 
-          <Tab text="localiser"  name="map-marked-alt"  route ='Map' />
+          {/* <Tab text="localiser"  name="map-marked-alt"  route ='Map' /> */}
+          <Tab text="localiser"  name="map-marked-alt"  route ='Location' />
           <Tab text="Profile"     name="user"   route ='Profile'/>  
           {/* indice : le props route doint contenir le le nom de stackScreen pas le component */}
         </View>
