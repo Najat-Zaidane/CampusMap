@@ -10,6 +10,7 @@ const HomeScreen = ({navigation}) => {
            
         <SafeAreaView style={styles.container}>
            <HomeContent/>
+           
            <FooterTabs/>
            </SafeAreaView>
    

@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, FlatList, View, Text, Image, StyleSheet } from 'react-native';
 import FooterTabs from "../components/nav/FooterTabs";
 
+
 //images 
 
 
