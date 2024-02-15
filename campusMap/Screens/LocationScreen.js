@@ -39,6 +39,14 @@ export const Emplacement={
              longtitude:-8.486656
           }
          },
+         {name:"Al Bayrouni",
+         description:"Amphithéâtre des cours",
+         size:400,
+         location:{
+            latitude:33.225829,
+            longtitude: -8.487050
+         }
+        },
           {name:"Nouvel Amphithéâtre",
          description:"Amphithéâtre des cours",
          size:400,
@@ -47,14 +55,7 @@ export const Emplacement={
             longtitude:-8.487301
          }
         },
-        {name:"Al Bayrouni",
-         description:"Amphithéâtre des cours",
-         size:400,
-         location:{
-            latitude:33.225829,
-            longtitude: -8.487050
-         }
-        }
+    
         ],
         departements:[
             {
@@ -123,7 +124,7 @@ export const Emplacement={
                 }
             }
         ],
-        buffets:[
+        buvettes:[
             {
                 name:'Buvette Etudiants', // to see
                 description:'Buvette des etudiants',
@@ -193,7 +194,7 @@ export const Emplacement={
             }
         },
         ucd:{
-            name:"CED",
+            name:"Centre d'études doctorales - CED",
             description:"Centres d'Etudes Doctorales",
             location:{
                 latitude:33.225468, 
@@ -287,7 +288,7 @@ const LocationsScreen = () => {
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.item}
-      onPress={() => navigation.navigate("Map", { location: item.location })}
+      onPress={() => navigation.navigate("Map", { location: item.location, title: item.description })}
     >
       <Text  medium >{item.name}</Text>
     </TouchableOpacity>
@@ -303,7 +304,7 @@ const LocationsScreen = () => {
         {/* <Text bold>{keyword}</Text> */}
       <FlatList
       // la liste 'Emplacement.batiment....)  est filtrer par la fonction 'searched' avec le keyword
-        data={Emplacement.batiment.amphi.concat(Emplacement.batiment.departements, Emplacement.batiment.bibliotheques, Emplacement.batiment.buffets, Emplacement.batiment.toilettes, Emplacement.batiment.parking, Emplacement.batiment.laboratoires, Emplacement.batiment.blocs).filter(searched(keyword))}  
+        data={Emplacement.batiment.amphi.concat(Emplacement.batiment.ucd,Emplacement.batiment.departements,Emplacement.batiment.blocs,Emplacement.batiment.administration, Emplacement.batiment.bibliotheques, Emplacement.batiment.buvettes,Emplacement.batiment.mosquée, Emplacement.batiment.toilettes, Emplacement.batiment.parking, Emplacement.batiment.laboratoires,Emplacement.batiment.anapec ).filter(searched(keyword))}  
         renderItem={renderItem}
         keyExtractor={(item) => item.name}
         style={styles.listContainer}
