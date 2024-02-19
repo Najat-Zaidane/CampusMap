@@ -4,6 +4,7 @@ import Text from '@kaloraat/react-native-text';
 import { useNavigation } from "@react-navigation/native";
 import FooterTabs from "../components/nav/FooterTabs";
 import SearchBar from '../components/SearchBar';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 //Emplacements 
 export const Emplacement={
     batiment:{
@@ -299,9 +300,10 @@ const LocationsScreen = () => {
   } ; 
    
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView contentContainerStyle={styles.container}>
         <View style={styles.searchbar}><SearchBar value={keyword} setValue={setKeyword}/></View>
         {/* <Text bold>{keyword}</Text> */}
+        <View style={styles.content}>
       <FlatList
       // la liste 'Emplacement.batiment....)  est filtrer par la fonction 'searched' avec le keyword
         data={Emplacement.batiment.amphi.concat(Emplacement.batiment.ucd,Emplacement.batiment.departements,Emplacement.batiment.blocs,Emplacement.batiment.administration, Emplacement.batiment.bibliotheques, Emplacement.batiment.buvettes,Emplacement.batiment.mosquée, Emplacement.batiment.toilettes, Emplacement.batiment.parking, Emplacement.batiment.laboratoires,Emplacement.batiment.anapec ).filter(searched(keyword))}  
@@ -310,7 +312,8 @@ const LocationsScreen = () => {
         style={styles.listContainer}
       />
         <FooterTabs/> 
-    </View>
+        </View>
+    </KeyboardAwareScrollView>
   );
 };
 
@@ -320,6 +323,11 @@ const styles = StyleSheet.create({
     justifyContent : "space-between",
     backgroundColor: "#F8EFE0",
 
+  },
+  content: {
+    flex: 1,
+    justifyContent: "space-between",
+    marginBottom: 25, 
   },
   searchbar:{
     marginTop : 110,
@@ -331,8 +339,8 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     paddingHorizontal: 15,
-    marginVertical : 50,
-    paddingBottom: 18,
+    marginVertical : 50, //20
+   paddingBottom: 18,
 },
 });
 
