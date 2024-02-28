@@ -21,8 +21,6 @@ import HeaderTabLeft from './components/nav/HeaderTabLeft.js';
 import LoisirScreen from './Screens/LoisirScreen.js';
 import LocationsScreen from './Screens/LocationScreen.js';
 
-
-// TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // web app's Firebase configuration
