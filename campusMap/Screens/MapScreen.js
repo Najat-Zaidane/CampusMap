@@ -7,7 +7,7 @@ import MapViewDirections from "react-native-maps-directions";
 import * as Location from 'expo-location';
 import FooterTabs from "../components/nav/FooterTabs";
 
-const GOOGLE_MAPS_APIKEY = "AIzaSyCowwHJ_1-3-4K6b_PY0DGDOzFzdpAaaEE";
+const GOOGLE_MAPS_APIKEY = "";
 
 export default function MapScreen() {
   const route = useRoute();
