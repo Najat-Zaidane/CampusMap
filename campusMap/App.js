@@ -25,7 +25,7 @@ import LocationsScreen from './Screens/LocationScreen.js';
 
 // web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBjHS_x1VfbA8UtYjTpf0R8CFk38T0bS5c", //token  de acces a la base de donnes de firebase
+  apiKey: "", //token  de acces a la base de donnes de firebase
   authDomain: "campusmap-1f4d7.firebaseapp.com",
   projectId: "campusmap-1f4d7",
   storageBucket: "campusmap-1f4d7.appspot.com",
