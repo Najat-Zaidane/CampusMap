@@ -294,6 +294,7 @@ const LocationsScreen = () => {
       <Text  medium >{item.name}</Text>
     </TouchableOpacity>
   );
+  
   //filtarge  les locations en fonction de la keyword
   const searched = (keyword) => (item) => {
       return item.name.toLowerCase().includes(keyword.toLowerCase());
